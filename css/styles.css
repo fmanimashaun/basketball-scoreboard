@@ -1,0 +1,198 @@
+/*import fonts*/
+
+/*“Cursed Timer ULiL” Font by heaven castro*/
+@font-face {
+    font-family: 'Cursed Timer ULiL';
+    src: url("../fonts/cursed-timer-ulil-font/CursedTimerUlil-Aznm.ttf") format('TrueType');
+    font-weight: 400;
+}
+
+
+@font-face {
+    font-family: Verdana;
+    src: url("../fonts/verdana-font-family/verdana-bold.ttf") format('TrueType');
+    font-weight: bold;
+}
+
+
+/*Universal styling*/
+body {
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-image: url("../img/bg.jpg");
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4;
+}
+
+/*creating a stack container*/
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/*Set default max-width for all first child of the container class*/
+.container>* {
+    max-width: 100%;
+}
+
+/*Make the main element centered vertically*/
+.container>main {
+    margin: auto;
+    padding: 10px;
+}
+
+.container> :first-child:not(main) {
+    margin-block-start: 0;
+}
+
+.container> :last-child:not(main) {
+    margin-block-end: 0;
+}
+
+.scoreboard {
+    width: fit-content;
+    text-align: center;
+    padding: 1rem;
+    border: 2px solid #ffffff;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    background: rgba(27, 36, 74, 0.9);
+}
+
+
+.timer {
+    width: fit-content;
+    background-color: #222222;
+    margin-inline: auto;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+
+.timer-content {
+    font-family: 'Cursed Timer ULiL';
+    font-weight: 400;
+    font-size: 50px;
+    color: #F94F6D;
+}
+
+
+.scoreboard-wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    column-gap: 100px;
+}
+
+
+.header {
+    margin-block: 10px;
+    font-family: Verdana, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 36px;
+    color: #EEEEEE;
+}
+
+.score {
+    background-color: #222222;
+    margin-inline: 10px;
+    border-radius: 20px;
+}
+
+#score_home,
+#score_guest {
+    padding-inline: 10px;
+    font-family: 'Cursed Timer ULiL';
+    font-weight: 400;
+    font-size: 90px;
+    line-height: 127px;
+    color: #F94F6D;
+}
+
+
+.home__scoring-btn button,
+.away__scoring-btn button{
+    font-family: 'Cursed Timer ULiL';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #9AABD8;
+    border: 1px solid #9AABD8;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+
+.start__btn,
+.reset__btn,
+.pause__btn {
+    margin-block-start: 20px;
+    font-family: 'Cursed Timer ULiL';
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+    color: #9AABD8;
+    border: 1px solid #9AABD8;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.timer-content.blink {
+    animation: blink 1s linear infinite;
+}
+
+#score_home.textRight {
+    text-align: right;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+.foot__note {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-block-end: 1.9375rem;
+    color: #222222;
+}
+
+.foot__note a {
+    text-decoration: none;
+    color: #222222;
+}
+
+
+@media only screen and (min-width: 768px) {}

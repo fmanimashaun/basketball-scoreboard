@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Basketball Scoreboard</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <main>
+            <div class="scoreboard">
+
+                <!--timer-->
+                <div class="timer">
+                    <h1 class="timer-content">00:00</h1>
+                </div>
+                
+                <!--scoreboard team score details-->
+                <div class="scoreboard-wrapper">
+                    <div class="home_team">
+                        <h2 class="header">HOME</h2>
+                        <div class="score">
+                            <h3 id="score_home">0</h3>
+                        </div>
+                        <div class="home__scoring-btn">
+                            <button>+1</button>
+                            <button>+2</button>
+                            <button>+3</button>
+                        </div>
+                    </div>
+                    <div class="guest_team">
+                        <h2 class="header">GUEST</h2>
+                        <div class="score">
+                            <h3 id="score_guest">0</h3>
+                        </div>
+                        <div class="away__scoring-btn">
+                            <button>+1</button>
+                            <button>+2</button>
+                            <button>+3</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--start, pause and reset buttons-->
+                <button class="start__btn">START</button>
+                <button class="pause__btn">PAUSE</button>
+                <button class="reset__btn">RESET</button>
+            </div>
+        </main>
+        <footer>
+            <p class="foot__note">
+                created by <a href="https://github.com/fmanimashaun" target="_blank"><strong>fmanimashaun</a></strong>
+            </p>
+        </footer>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
