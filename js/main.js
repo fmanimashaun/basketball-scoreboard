@@ -38,7 +38,6 @@ awayScoringBtnCollection.forEach((btn) => {
 
 let gameDuration;
 let pause = false;
-let startTime = 70; // 12 minutes
 
 const gameCountDown = (time) => {
   gameDuration = setInterval(() => {
@@ -63,16 +62,29 @@ const gameCountDown = (time) => {
   }, 1000);
 };
 
-
-// Start the timer
-startBtn.addEventListener('click', () => {
-  gameCountDown(startTime);
-});
-
 // stop countdown at zero second
 const stopTimer = () => {
   gameDuration = clearInterval(gameDuration);
 };
+
+// Start the timer
+startBtn.addEventListener('click', () => {
+  const startTimeArr = (gameTimer.innerText).split(':');
+  const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
+  gameCountDown(startTime);
+  startBtn.classList.add('hide');
+});
+
+// Pause the timer
+pauseBtn.addEventListener('click', (event) => {
+  if (event.target.innerText === 'Pause') {
+    pause = true;
+    event.target.innerText = 'Resume';
+  } else {
+    pause = false;
+    event.target.innerText = 'Pause';
+  }
+});
 
 
 
