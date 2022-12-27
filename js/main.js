@@ -34,6 +34,50 @@ awayScoringBtnCollection.forEach((btn) => {
   });
 });
 
+// Timer functionality
+
+let gameDuration;
+let pause = false;
+let startTime = 70; // 12 minutes
+
+const gameCountDown = (time) => {
+  gameDuration = setInterval(() => {
+    if (pause) {
+      return;
+    }
+    time--;
+    let minutes = Math.floor(time / 60);
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    let seconds = time % 60;
+    seconds = seconds < 10 ? '0' + seconds : seconds;
+    gameTimer.innerText = `${minutes}:${seconds}`;
+
+    if (time < 60) {
+      gameTimer.classList.add('red-text');
+    }
+
+    if (time === 0) {
+      stopTimer();
+      gameTimer.classList.add('blink');
+    }
+  }, 1000);
+};
+
+
+// Start the timer
+startBtn.addEventListener('click', () => {
+  gameCountDown(startTime);
+});
+
+// stop countdown at zero second
+const stopTimer = () => {
+  gameDuration = clearInterval(gameDuration);
+};
+
+
+
+
+
 
 
 // Create a timer that runs from 0 to 12 minutes
