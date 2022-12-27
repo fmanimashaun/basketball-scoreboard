@@ -86,6 +86,22 @@ pauseBtn.addEventListener('click', (event) => {
   }
 });
 
+// Reset functionality
+const resetGame = () => {
+  gameTimer.innerText = '12:00';
+  gameTimer.classList.remove('red-text');
+  gameTimer.classList.remove('blink');
+  homeScore.innerText = '0';
+  awayScore.innerText = '0';
+  startBtn.classList.remove('hide');
+  pauseBtn.innerText = 'Pause';
+  pause = false;
+  stopTimer();
+};
+
+// add event listener to reset button
+resetBtn.addEventListener('click', resetGame);
+
 
 
 
