@@ -1,11 +1,9 @@
-# basketball-scoreboard
-
 ![](https://img.shields.io/badge/fmanimashaun-green)
 
-# Artsy
+# basketball-scoreboard
 
 <p align="center">
-  <img width="1200" src="screenshot/COVER.PNG">
+  <img width="1200" src="img/confetti_effect.gif">
 </P>
 
 ## 📗 Table of Contents
