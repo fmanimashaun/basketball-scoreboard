@@ -27,7 +27,7 @@
 
 ## 📖 Overview <a name="about-project"></a>
 
-The project was built to showcase my skills in HTML, CSS, and JavaScript and how to build an interactive webpage. This is a simple basketball scoreboard web app to keep track of game scores and timing. The development is based on the given[figma](https://www.figma.com/file/YC48MCx4frBFtYoz6rNJE6/Basketball-Scoreboard). This is part of the Scrimba Frontend Developer Career Path solo projects.
+The project was built to showcase my skills in HTML, CSS, and JavaScript and how to build an interactive webpage. This is a simple basketball scoreboard web app to keep track of game scores and timing. The development is based on the given [figma](https://www.figma.com/file/YC48MCx4frBFtYoz6rNJE6/Basketball-Scoreboard) design. This is part of the Scrimba Frontend Developer Career Path solo projects.
 
 ### Project Objectives <a name="project-objectives"></a>
 
