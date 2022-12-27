@@ -39,9 +39,6 @@ The project was built to showcase my skills in HTML, CSS, and JavaScript and how
 - create a button to pause/resume the game timer
 - create a button to reset the game timer and score
 - Add confetti effect when the game is over (winner is determined by the team with the highest score).
-<p align="center">
-  <img src="img/confetti_effect.gif">
-</P>
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -54,8 +51,11 @@ The project was built to showcase my skills in HTML, CSS, and JavaScript and how
 - [figma](https://www.figma.com/)
 
 ### Key Features <a name="key-features"></a>
-
-
+- Confetti effect when the game is over (winner is determined by the team with the highest score).
+- Buttons to increase the score based on score type for each team
+- Button to start the game timer
+- Button to pause/resume the game timer
+- Button to reset the game timer and score
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
@@ -95,6 +95,7 @@ To get a local copy up and running follow these simple example steps.
 - [Twitter](https://twitter.com/fmanimashaun)
 - [LinkedIn](https://www.linkedin.com/in/fmanimashaun/)
 - [Website](https://fmanimashaun.com)
+- [Blog](https://blog.fmanimashaun.com)
 
 ## 🤝 Contributing <a name="contributing"></a>
 
