@@ -90,14 +90,6 @@ body::before {
     color: #adf802;
 }
 
-.red-text {
-    color: #F94F6D;
-}
-
-.hide {
-    display: none;
-}
-
 .scoreboard-wrapper {
     display: flex;
     flex-flow: row wrap;
@@ -130,7 +122,6 @@ body::before {
     font-weight: 400;
     font-size: 90px;
     line-height: 127px;
-    color: #F94F6D;
 }
 
 
@@ -165,7 +156,22 @@ body::before {
     cursor: pointer;
 }
 
-.timer-content.blink {
+
+.foot__note {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-block-end: 1.9375rem;
+    color: #222222;
+}
+
+.foot__note a {
+    text-decoration: none;
+    color: #222222;
+}
+
+/* utility classes */
+.blink {
     animation: blink 1s linear infinite;
 }
 
@@ -187,19 +193,18 @@ body::before {
     }
 }
 
-
-.foot__note {
-    text-align: center;
-    font-size: 0.875rem;
-    line-height: 1.0625rem;
-    margin-block-end: 1.9375rem;
-    color: #222222;
+.red-text {
+    color: #F94F6D;
 }
 
-.foot__note a {
-    text-decoration: none;
-    color: #222222;
+.green-text {
+    color: #adf802;
 }
 
+.yellow-text {
+    color: #F9D802;
+}
 
-@media only screen and (min-width: 768px) {}
+.hide {
+    display: none;
+}
