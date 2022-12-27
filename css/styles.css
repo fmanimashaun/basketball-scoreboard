@@ -46,21 +46,21 @@ body::before {
 }
 
 /*Set default max-width for all first child of the container class*/
-.container>* {
+.container > * {
     max-width: 100%;
 }
 
 /*Make the main element centered vertically*/
-.container>main {
+.container > main {
     margin: auto;
     padding: 10px;
 }
 
-.container> :first-child:not(main) {
+.container > :first-child:not(main) {
     margin-block-start: 0;
 }
 
-.container> :last-child:not(main) {
+.container > :last-child:not(main) {
     margin-block-end: 0;
 }
 
@@ -87,9 +87,8 @@ body::before {
     font-family: 'Cursed Timer ULiL';
     font-weight: 400;
     font-size: 50px;
-    color: #F94F6D;
+    color: #adf802;
 }
-
 
 .scoreboard-wrapper {
     display: flex;
@@ -123,12 +122,11 @@ body::before {
     font-weight: 400;
     font-size: 90px;
     line-height: 127px;
-    color: #F94F6D;
 }
 
 
 .home__scoring-btn button,
-.away__scoring-btn button{
+.away__scoring-btn button {
     font-family: 'Cursed Timer ULiL';
     font-weight: 400;
     font-size: 18px;
@@ -158,7 +156,22 @@ body::before {
     cursor: pointer;
 }
 
-.timer-content.blink {
+
+.foot__note {
+    text-align: center;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    margin-block-end: 1.9375rem;
+    color: #222222;
+}
+
+.foot__note a {
+    text-decoration: none;
+    color: #222222;
+}
+
+/* utility classes */
+.blink {
     animation: blink 1s linear infinite;
 }
 
@@ -180,19 +193,18 @@ body::before {
     }
 }
 
-
-.foot__note {
-    text-align: center;
-    font-size: 0.875rem;
-    line-height: 1.0625rem;
-    margin-block-end: 1.9375rem;
-    color: #222222;
+.red-text {
+    color: #F94F6D;
 }
 
-.foot__note a {
-    text-decoration: none;
-    color: #222222;
+.green-text {
+    color: #adf802;
 }
 
+.yellow-text {
+    color: #F9D802;
+}
 
-@media only screen and (min-width: 768px) {}
+.hide {
+    display: none;
+}
