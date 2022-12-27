@@ -2,6 +2,7 @@
 const startBtn = document.querySelector('.start__btn');
 const resetBtn = document.querySelector('.reset__btn');
 const pauseBtn = document.querySelector('.pause__btn');
+const hurrayBtn = document.querySelector('.hurray__btn');
 const gameTimer = document.querySelector('.timer-content');
 const homeScore = document.querySelector('#score_home');
 const awayScore = document.querySelector('#score_guest');
@@ -58,6 +59,24 @@ const gameCountDown = (time) => {
     if (time === 0) {
       stopTimer();
       gameTimer.classList.add('blink');
+      if (parseInt(homeScore.innerText) > parseInt(awayScore.innerText)) {
+        homeScore.classList.remove('red-text');
+        homeScore.classList.add('green-text');
+        party.confetti(homeScore, {
+          count: party.variation.range(20, 40),
+        });
+      } else if (parseInt(homeScore.innerText) < parseInt(awayScore.innerText)) {
+        awayScore.classList.remove('red-text');
+        awayScore.classList.add('green-text');
+        party.confetti(awayScore, {
+          count: party.variation.range(20, 40),
+        });
+      } else {
+        homeScore.classList.remove('red-text');
+        awayScore.classList.remove('red-text');
+        homeScore.classList.add('yellow-text');
+        awayScore.classList.add('yellow-text');
+      }
     }
   }, 1000);
 };
@@ -69,9 +88,9 @@ const stopTimer = () => {
 
 // Start the timer
 startBtn.addEventListener('click', () => {
-  const startTimeArr = (gameTimer.innerText).split(':');
-  const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
-  gameCountDown(startTime);
+  // const startTimeArr = (gameTimer.innerText).split(':');
+  // const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
+  gameCountDown(20);
   startBtn.classList.add('hide');
 });
 
@@ -91,6 +110,10 @@ const resetGame = () => {
   gameTimer.innerText = '12:00';
   gameTimer.classList.remove('red-text');
   gameTimer.classList.remove('blink');
+  homeScore.classList.remove('green-text, yellow-text');
+  awayScore.classList.remove('green-text, yellow-text');
+  homeScore.classList.add('red-text');
+  awayScore.classList.add('red-text');
   homeScore.innerText = '0';
   awayScore.innerText = '0';
   startBtn.classList.remove('hide');
@@ -101,12 +124,6 @@ const resetGame = () => {
 
 // add event listener to reset button
 resetBtn.addEventListener('click', resetGame);
-
-
-
-
-
-
 
 // Create a timer that runs from 0 to 12 minutes
 // at the end of the timer, score of the highest should be blinking with a color change to green
