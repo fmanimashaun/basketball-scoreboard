@@ -98,9 +98,9 @@ const stopTimer = () => {
 // Start the timer
 startBtn.addEventListener('click', () => {
   pauseBtn.classList.remove('hide');
-  // const startTimeArr = (gameTimer.innerText).split(':');
-  // const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
-  gameCountDown(20);
+  const startTimeArr = (gameTimer.innerText).split(':');
+  const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
+  gameCountDown(startTime);
   startBtn.classList.add('hide');
 });
 
