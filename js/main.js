@@ -56,26 +56,35 @@ const gameCountDown = (time) => {
       gameTimer.classList.add('red-text');
     }
 
+    // stop the timer at zero second
     if (time === 0) {
+      // clear set interval
       stopTimer();
+
+      // add blink class to the timer
       gameTimer.classList.add('blink');
+
+      // hide the pause button
+      pauseBtn.classList.add('hide');
+
+      // add confetti to the winner
       if (parseInt(homeScore.innerText) > parseInt(awayScore.innerText)) {
         homeScore.classList.remove('red-text');
-        homeScore.classList.add('green-text');
+        homeScore.classList.add('green-text', 'blink');
         party.confetti(homeScore, {
           count: party.variation.range(20, 40),
         });
       } else if (parseInt(homeScore.innerText) < parseInt(awayScore.innerText)) {
         awayScore.classList.remove('red-text');
-        awayScore.classList.add('green-text');
+        awayScore.classList.add('green-text', 'blink');
         party.confetti(awayScore, {
           count: party.variation.range(20, 40),
         });
       } else {
         homeScore.classList.remove('red-text');
         awayScore.classList.remove('red-text');
-        homeScore.classList.add('yellow-text');
-        awayScore.classList.add('yellow-text');
+        homeScore.classList.add('yellow-text', 'blink');
+        awayScore.classList.add('yellow-text','blink');
       }
     }
   }, 1000);
@@ -88,6 +97,7 @@ const stopTimer = () => {
 
 // Start the timer
 startBtn.addEventListener('click', () => {
+  pauseBtn.classList.remove('hide');
   // const startTimeArr = (gameTimer.innerText).split(':');
   // const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
   gameCountDown(20);
@@ -99,9 +109,11 @@ pauseBtn.addEventListener('click', (event) => {
   if (event.target.innerText === 'Pause') {
     pause = true;
     event.target.innerText = 'Resume';
+    resetBtn.classList.remove('hide');
   } else {
     pause = false;
     event.target.innerText = 'Pause';
+    resetBtn.classList.add('hide');
   }
 });
 
@@ -110,22 +122,40 @@ const resetGame = () => {
   gameTimer.innerText = '12:00';
   gameTimer.classList.remove('red-text');
   gameTimer.classList.remove('blink');
-  homeScore.classList.remove('green-text, yellow-text');
-  awayScore.classList.remove('green-text, yellow-text');
+
+  // remove the color from the home score
+  if (homeScore.classList.contains('green-text')) {
+    homeScore.classList.remove('green-text', 'blink');
+  } else if (homeScore.classList.contains('yellow-text')) {
+    homeScore.classList.remove('yellow-text', 'blink');
+  }
+
+  // remove the color from the away score
+  if (awayScore.classList.contains('green-text')) {
+    awayScore.classList.remove('green-text', 'blink');
+  } else if (awayScore.classList.contains('yellow-text')) {
+    awayScore.classList.remove('yellow-text', 'blink');
+  }
+
   homeScore.classList.add('red-text');
   awayScore.classList.add('red-text');
   homeScore.innerText = '0';
   awayScore.innerText = '0';
+
+  // show the start button
   startBtn.classList.remove('hide');
+
+  // hide the pause button rest the textand value
+  if (!(pauseBtn.classList.contains('hide'))) {
+    pauseBtn.classList.add('hide');
+  }
   pauseBtn.innerText = 'Pause';
   pause = false;
+
+  // hide the reset button
+  resetBtn.classList.add('hide');
   stopTimer();
 };
 
 // add event listener to reset button
 resetBtn.addEventListener('click', resetGame);
-
-// Create a timer that runs from 0 to 12 minutes
-// at the end of the timer, score of the highest should be blinking with a color change to green
-// if the score is same, the color should be yellow for both team and the score should blink
-// add Confetti Falling effect when the timer ends
