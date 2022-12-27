@@ -67,6 +67,9 @@ const gameCountDown = (time) => {
       // hide the pause button
       pauseBtn.classList.add('hide');
 
+      // show the reset button
+      resetBtn.classList.remove('hide');
+
       // add confetti to the winner
       if (parseInt(homeScore.innerText) > parseInt(awayScore.innerText)) {
         homeScore.classList.remove('red-text');
@@ -100,7 +103,7 @@ startBtn.addEventListener('click', () => {
   pauseBtn.classList.remove('hide');
   const startTimeArr = (gameTimer.innerText).split(':');
   const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
-  gameCountDown(startTime);
+  gameCountDown(20);
   startBtn.classList.add('hide');
 });
 
