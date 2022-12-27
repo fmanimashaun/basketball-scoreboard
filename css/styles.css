@@ -94,6 +94,9 @@ body::before {
     color: #F94F6D;
 }
 
+.hide {
+    display: none;
+}
 
 .scoreboard-wrapper {
     display: flex;
