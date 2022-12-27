@@ -103,7 +103,7 @@ startBtn.addEventListener('click', () => {
   pauseBtn.classList.remove('hide');
   const startTimeArr = (gameTimer.innerText).split(':');
   const startTime = parseInt(startTimeArr[0]) * 60 + parseInt(startTimeArr[1]);
-  gameCountDown(20);
+  gameCountDown(startTime);
   startBtn.classList.add('hide');
 });
 
