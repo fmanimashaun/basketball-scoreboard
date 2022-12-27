@@ -87,6 +87,10 @@ body::before {
     font-family: 'Cursed Timer ULiL';
     font-weight: 400;
     font-size: 50px;
+    color: #adf802;
+}
+
+.red-text {
     color: #F94F6D;
 }
 
